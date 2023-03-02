@@ -1,0 +1,783 @@
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+/* |||                                                                                                  ||| */
+/* |||   GENERAL                                                                                        ||| */
+/* |||                                                                                                  ||| */
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;900&display=swap');
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/fontawesome.min.css");
+
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: none;
+    text-decoration: none;
+    user-select : none;
+}
+
+
+html {
+    font-family: 'Merriweather', sans-serif;
+}
+body {
+    background: #0E1C26;
+    /* height: 100vh; */
+}
+
+h2 {
+    font-size: 22px;
+    font-weight: 400;
+    padding: 0.3rem;
+}
+
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+/* |||                                                                                                  ||| */
+/* |||   CSS FOR DESKTOP                                                                                ||| */
+/* |||                                                                                                  ||| */
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+
+@media screen and (min-width: 360px) {
+
+#mobile-container {
+    display: none;
+}
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 0.5rem;
+}
+
+*::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #253E45;
+    /* height: 30px; */
+}
+
+/* Works on Firefox */
+.scroller {
+    overflow-y: scroll;
+    scrollbar-color: #253E45 rgba(0, 0, 0, 0.1);
+    scrollbar-width: thin;
+}
+#header {
+    width: 10%;
+}
+
+#website-logo {
+    /* border: red solid 1px; */
+    display: block;
+    width: 90%;
+    height: 200px;
+    margin: 1em auto;
+    background: url("polaris_logo_light.png") center no-repeat ;
+    background-size: contain;
+    transition: all 1s ease;
+}
+
+#burger-icon {
+    display: none;
+}
+
+#container {
+    width: 90%;
+    height: 100vh;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: all 1s ease-out;
+    -webkit-transition: all 1s ease-out;
+    -moz-transition: all 1s ease-out;
+    -ms-transition: all 1s ease-out;
+    -o-transition: all 1s ease-out;
+}
+
+/* ================================================================ */
+/* =   NAVIGATION BY TABS SYSTEM                                  = */
+/* ================================================================ */
+
+/* -------------------------------------------------- */
+/* TABS - CSS rules for .tab items                    */
+/* -------------------------------------------------- */
+
+.tabs-container {
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    }
+
+.tabs {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: #E0E0E2;
+    border-radius: 1em 1em 0 0;
+    transition: transform 0.5s ease-in-out;
+    -webkit-border-radius: 1em 1em 0 0;
+    -moz-border-radius: 1em 1em 0 0;
+    -ms-border-radius: 1em 1em 0 0;
+    -o-border-radius: 1em 1em 0 0;
+    -webkit-transition: transform 0.5s ease-in-out;
+    -moz-transition: transform 0.5s ease-in-out;
+    -ms-transition: transform 0.5s ease-in-out;
+    -o-transition: transform 0.5s ease-in-out;
+}
+
+.tabs:hover {
+    transform: translateY(1rem);
+    -webkit-transform: translateY(1rem);
+    -moz-transform: translateY(1rem);
+    -ms-transform: translateY(1rem);
+    -o-transform: translateY(1rem);
+}
+
+.tab-expeditions {
+    background: #172A32;
+    z-index: 2;
+}
+
+.tab-philosophie {
+    background: #1C3139;
+    color: #E0E0E2;
+    z-index: 4;
+}
+
+.tab-team {
+    background: #21373F;
+    z-index: 6;
+}
+
+.tab-contact {
+    background: #2A454B;
+    z-index: 8;
+}
+
+/* -------------------------------------------------- */
+/* CONTENT - CSS rules for .content items             */
+/* -------------------------------------------------- */
+
+.content {
+    padding: 2rem;
+    height: 89vh;
+    position: absolute;
+    top: 5rem;
+    right: 0;
+}
+
+.content-expeditions {
+    background: #172A32;
+    width: 100%;
+    z-index: 1;
+    box-shadow: 0px -5px 30px rgba(0, 0, 0, 0.25);
+}
+
+.content-philosophie {
+    background: #1C3139;
+    color: #E0E0E2;
+    width: 75%;
+    z-index: 3;
+    box-shadow: 0px -5px 30px rgba(0, 0, 0, 0.25);
+}
+
+.content-team {
+    background: #21373F;
+    width: 50%;
+    z-index: 5;
+    box-shadow: 0px -5px 30px rgba(0, 0, 0, 0.25);
+}
+
+.content-contact {
+    background: #2A454B;
+    width: 25%;
+    z-index: 7;
+    box-shadow: 0px -5px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* -------------------------------------------------- */
+/* BRINGS THE CLICKED ITEM FOREWARD                   */
+/* -------------------------------------------------- */
+
+.foreground-content {
+    z-index: 9;
+    /* border: red solid 3px; */
+}
+
+.foreground-tab {
+    z-index: 10;
+    /* border: magenta solid 3px; */
+}
+
+/* ================================================================ */
+/* =   CONTENT ELEMENT FOR EACH TAB                               = */
+/* ================================================================ */
+
+/* -------------------------------------------------- */
+/* expeditions                                            */
+/* -------------------------------------------------- */
+.expeditions-thumb-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+    width: 100%;
+    height: 100%;
+    border-bottom: 2px solid #253E45;
+    
+}
+
+.expeditions-thumb {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    height: 18em;
+    margin: 0.8rem;
+    overflow: hidden;
+    border: #294b59 solid 1px;
+    border-radius: 1em;
+    transition: all 1s ease-in;
+    -webkit-border-radius: 1em;
+    -moz-border-radius: 1em;
+    -ms-border-radius: 1em;
+    -o-border-radius: 1em;
+    -webkit-transition: all 1s ease-in;
+    -moz-transition: all 1s ease-in;
+    -ms-transition: all 1s ease-in;
+    -o-transition: all 1s ease-in;
+}
+.expeditions-thumb img {
+    z-index: -1;
+    position: relative;
+    max-width: 100%;
+    transition: all 1s ease-in;
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    text-align: center;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 2s ease-in;
+    -webkit-transition: all 2s ease-in;
+    -moz-transition: all 2s ease-in;
+    -ms-transition: all 2s ease-in;
+    -o-transition: all 2s ease-in;
+}
+
+.overlay:hover {
+    opacity: 1;
+}
+
+.expeditions-thumb:hover img {
+    opacity: 0.4;
+    filter: grayscale(1);
+    -webkit-filter: grayscale(1), contrast(2);
+}
+.expeditions-name {
+    z-index: 2;
+    color: #9d1c02;
+    font-weight: 700;
+    font-size: 2em;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    text-align: center;
+    width: 100%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+}
+
+.expeditions-link {
+    margin-top: 5em;
+    border-top: 1px solid #E0E0E2;
+    padding: 0.3em 0.8em;
+    color: #E0E0E2;
+    font-size: 1.2rem;
+    transition: transform .5s ease;
+    -webkit-transition: transform .5s ease;
+    -moz-transition: transform .5s ease;
+    -ms-transition: transform .5s ease;
+    -o-transition: transform .5s ease;
+}
+
+.expeditions-link:hover {
+    transform: scale(1.2);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+}
+
+/* -------------------------------------------------- */
+/* philosophie                                         */
+/* -------------------------------------------------- */
+
+.philosophie-thumb-container {
+    width: 100%;
+    height: 95%;
+    padding: 0.8rem;
+    overflow-y: scroll;
+    /* border: red solid 2px; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.philosophie-thumb {
+    width: 30%;
+    margin:0.8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    color: #E0E0E2;
+    text-align: center;
+    transition: all 0.5s ease;
+    /* border: magenta solid 2px; */
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+} 
+
+.philosophie-thumb:hover {
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+}
+
+.philosophie-thumb img {
+    width: 60%;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+/* -------------------------------------------------- */
+/* team                                             */
+/* -------------------------------------------------- */
+.collapse-container {
+    overflow-y: scroll;
+    width: 100%;
+    height: 100%;
+    border-bottom: 2px solid #2A454B;
+}
+.collapse {
+    margin: 1em 0;
+}
+.collapse-btn {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    border-bottom: 1px solid #E0E0E2;
+}
+.collapse-btn h3 {
+    color: #9d1c02;
+    margin-left: 2em;
+}
+.collapse-title {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.collapse-img {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+.collapse-img img {
+    width: 100%;
+    height: auto;
+}
+#collapse-target {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #E0E0E2;
+    font-size: 2em;
+    font-weight: 300;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: solid 1px #E0E0E2;
+    margin-right: 2em;
+    border-radius: 50%;
+    content: '+';
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+#collapse-target:hover {
+    background: #2A454B;
+}
+
+.collapse-content {
+    padding: 2em;
+    display: none;
+}
+
+.collapse-content p {
+    color: #E0E0E2;
+}
+
+
+/* -------------------------------------------------- */
+/* contact                                            */
+/* -------------------------------------------------- */
+
+form {
+    padding: 1.5em;
+    border: solid rgba(255, 255, 255, 0.479) 2px;
+    border-radius: 1em;
+    -webkit-border-radius: 1em;
+    -moz-border-radius: 1em;
+    -ms-border-radius: 1em;
+    -o-border-radius: 1em;
+}
+
+input {
+    width: 100%;
+    height: 3em;
+    margin: 0.6rem 0;
+    padding-left: 1rem;
+    background-color: #2A454B;
+    color: #E0E0E2;
+    border: solid #E0E0E2 2px;
+    border-radius: 2em;
+    -webkit-border-radius: 2em;
+    -moz-border-radius: 2em;
+    -ms-border-radius: 2em;
+    -o-border-radius: 2em;
+}
+
+input:focus {
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.300);
+
+}
+
+input::placeholder {
+    color: #E0E0E2;
+    border: none;
+}
+
+form > button {
+    display: block;
+    margin: auto;
+    margin-top: 0.8rem;
+    color: #E0E0E2;
+    font-size: 1.5em;
+    background-color: rgba(255, 255, 255, 0);
+    width: 3rem;
+    height: 3rem;
+    border: #E0E0E2 2px solid;
+    border-radius: 50%;;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+form > button:hover, input:focus {
+    background-color: #3a606a;
+}
+.contact-coor {
+    margin-top: 2rem;
+    text-align: center;
+    color: #E0E0E2;
+}
+}
+
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+/* |||                                                                                                  ||| */
+/* |||   CSS FOR MOBILE                                                                                 ||| */
+/* |||                                                                                                  ||| */
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+
+@media screen and (max-width: 450px) {
+
+    /* Works on Chrome, Edge, and Safari */
+    *::-webkit-scrollbar {
+        width: 0.5rem;
+    }
+    
+    *::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0.1);
+    }
+    
+    *::-webkit-scrollbar-thumb {
+        background-color: #71F1F9;
+        /* height: 30px; */
+    }
+    
+    /* Works on Firefox */
+    .scroller {
+        overflow-y: scroll;
+        scrollbar-color: #71F1F9 rgba(0, 0, 0, 0.1);
+        scrollbar-width: thin;
+    }
+
+    #container {
+        position: fixed;
+        padding: 0;
+        border: blue 1px solid;
+        width: 100%;
+    }
+
+    #header {
+        border: red 1px solid;
+        transition: all 1s ease;
+        width: 100%;
+        height: 7rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem;
+        position: fixed;
+        z-index: 200;
+        background-color: linear-gradient(#000000, #00000000);
+    }
+
+    #website-logo {
+        width: 30%;
+        background: url("/img/myod-blanc.png") center no-repeat ;
+        background-size: contain;
+        margin: 0;
+    }
+    
+    #burger-icon {
+        width: 60px;
+        height: 45px;
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -webkit-transition: .5s ease-in-out;
+        -moz-transition: .5s ease-in-out;
+        -o-transition: .5s ease-in-out;
+        transition: .5s ease-in-out;
+        cursor: pointer;
+        display: block;
+    }
+    
+    #burger-icon span {
+        display: block;
+        position: absolute;
+        height: 3px;
+        width: 100%;
+        background: #E0E0E2;
+        border-radius: 3px;
+        opacity: 1;
+        left: 0;
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -webkit-transition: .25s ease-in-out;
+        -moz-transition: .25s ease-in-out;
+        -o-transition: .25s ease-in-out;
+        transition: .25s ease-in-out;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        -ms-border-radius: 3px;
+        -o-border-radius: 3px;
+}
+    
+    #burger-icon span:nth-child(1) {
+        top: 0px;
+    }
+
+    #burger-icon span:nth-child(2),#burger-icon span:nth-child(3) {
+        top: 18px;
+    }
+
+    #burger-icon span:nth-child(4) {
+        top: 36px;
+    }
+
+    #burger-icon.open span:nth-child(1) {
+        top: 18px;
+        width: 0%;
+        left: 50%;
+    }
+
+    #burger-icon.open span:nth-child(2) {
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+    
+    #burger-icon.open span:nth-child(3) {
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+    }
+
+    #burger-icon.open span:nth-child(4) {
+        top: 18px;
+        width: 0%;
+        left: 50%;
+    }
+    
+    .action-button {
+        width: 6em;
+        height: 6em;
+        bottom: 0.5rem;
+        right: 0.8rem;
+        position: fixed;
+        background:  url('/img/action-icon.png') content-box center no-repeat, #FC6767;
+        box-shadow: 0px -5px 15px rgba(0, 0, 0, 0.25);
+        z-index: 100;
+        transition: all .5s ease-in-out;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+        transition: transform 1.5s ease-out;
+        -webkit-transition: all .5s ease-in-out;
+        -moz-transition: all .5s ease-in-out;
+        -ms-transition: all .5s ease-in-out;
+        -o-transition: all .5s ease-in-out;
+    }
+    
+    .action-button:hover {
+        transform:scale(1.1);
+        -webkit-transform:scale(1.1);
+        -moz-transform:scale(1.1);
+        -ms-transform:scale(1.1);
+        -o-transform:scale(1.1);
+    }
+    
+    /* ================================================================ */
+    /* =   NAVIGATION BY SLIDE SYSTEM                                 = */
+    /* ================================================================ */
+    
+    /* -------------------------------------------------- */
+    /* CANCEL TABS & CONTENT                              */
+    /* -------------------------------------------------- */
+
+    .tabs-container {
+        display: none;
+    }       
+
+    .content {
+        display: none;
+    }
+
+    #mobile-container {
+        display: block;
+    }
+
+    #mobile-nav {
+        /* border: 2px yellow solid; */
+        position: absolute;
+        width: 100%;
+        height: 15vh;
+        bottom: 0;
+    }
+
+    #mobile-expeditions {
+        width:100%;
+        height: 85vh;
+        background: #00A6C6;
+        color: #E0E0E2;
+        text-align: center;
+        border-radius: 1em 1em 0 0;
+        position: absolute;
+        top: 0;
+    }   
+
+    #mobile-philosophie {
+        width:100%;
+        height: 85vh;
+        background: #E0E0E2;
+        color: black;
+        text-align: center;
+        border-radius: 1em 1em 0 0;
+        position: absolute;
+        top: 5vh;
+    } 
+
+    #mobile-contact {
+        width:100%;
+        height: 85vh;
+        background: #00A6C6;
+        color: #E0E0E2;
+        text-align: center;
+        border-radius: 1em 1em 0 0;
+        position: absolute;
+        top: 10vh;
+    }
+    
+    #mobile-expeditions.unfold {
+        top: -70vh;
+        /* z-index: 10; */
+        transition: all 1s ease;
+        -webkit-transition: all 1s easeout;
+        -moz-transition: all 1s easeout;
+        -ms-transition: all 1s easeout;
+        -o-transition: all 1s easeout;
+    }
+
+    #mobile-philosophie.unfold {
+        top: -70vh;
+        /* z-index: 10; */
+        transition: all 1s ease;
+        -webkit-transition: all 1s easeout;
+        -moz-transition: all 1s easeout;
+        -ms-transition: all 1s easeout;
+        -o-transition: all 1s easeout;
+    }
+
+    #mobile-contact.unfold {
+        top:-70vh;
+        /* z-index: 10; */
+        transition: all 1s ease;
+        -webkit-transition: all 1s easeout;
+        -moz-transition: all 1s easeout;
+        -ms-transition: all 1s easeout;
+        -o-transition: all 1s easeout;
+    }
+
+    .unfold h2::before {
+        content: "\2212  ";
+        font-family: 'Merriweather', sans-serif;
+        font-size: 22px;
+        font-weight: 400;
+    }
+
+
+
+
+    }
