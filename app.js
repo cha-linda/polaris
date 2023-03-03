@@ -1,9 +1,14 @@
 window.addEventListener("DOMContentLoaded", () => {
 
-    if (window.screen.width <= 991) {
-        window.getElementbyId('modal').style.display = "block";
-        window.getElementbyId('container').style.display ="none";
-    }
+        if (window.screen.width <= 991) {
+            console.log('start');
+            let modal = document.getElementById('modal');
+            let main = document.getElementById('container');
+
+                modal.style.display = "block";
+                main.style.display = "none";
+            
+        }
 
     /* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
     /* |||                                                                                                  ||| */

@@ -25,8 +25,7 @@ html {
 
 body {
     background: #0E1C26;
-    height: 100%;
-    width: 100%;
+    height: 100vh;
     overflow: hidden;
 }
 
@@ -37,12 +36,10 @@ h2 {
 }
 
 #modal {
+    display: none;
     background: #0E1C26;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 100%;
+    height: 100%;
     z-index: 100;
 }
 
@@ -50,6 +47,8 @@ h2 {
     box-shadow: 0px -5px 30px rgba(0, 0, 0, 0.25);
     display: flex;
     position: relative;
+    top: 50%;
+    transform: translateY(-50%);
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
@@ -62,6 +61,10 @@ h2 {
     -moz-border-radius: 15px;
     -ms-border-radius: 15px;
     -o-border-radius: 15px;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
 }
 
 .modal-content p {
@@ -81,6 +84,9 @@ h2 {
     }
 }
 
+#container {
+    display: block;
+}
 /* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
 /* |||                                                                                                  ||| */
 /* |||   CSS FOR DESKTOP                                                                                ||| */
@@ -119,7 +125,6 @@ h2 {
     }
 
     #website-logo {
-        /* border: red solid 1px; */
         display: block;
         width: 80%;
         height: 150px;
