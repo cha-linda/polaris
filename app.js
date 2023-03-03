@@ -1,5 +1,10 @@
 window.addEventListener("DOMContentLoaded", () => {
 
+    if (window.screen.width <= 991) {
+        window.getElementbyId('modal').style.display = "block";
+        window.getElementbyId('container').style.display ="none";
+    }
+
     /* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
     /* |||                                                                                                  ||| */
     /* |||   NAVIGATION BY TABS SYSTEM - DESKTOP                                                            ||| */
@@ -49,44 +54,6 @@ window.addEventListener("DOMContentLoaded", () => {
             });
         });
     }
-
-    let items = document.getElementById('mobile-nav');
-    let mobileNav = Array.from(items.children);
-
-    mobileNav.forEach(element =>
-        element.addEventListener("touchstart", function () {
-            this.classList.toggle("unfold");
-        })
-    );
-
-    // A peaufiner. classList.add(). Le toggle n'est pas fonctionnel pour la finalité voulue. Penser à changer le CSS en fonction top de chaque #id.unfold.
-    // let items = document.getElementById('mobile-nav');
-    // let mobileNav = Array.from(items.children);
-
-    // mobileNav.forEach(element =>
-    //     element.addEventListener("touchstart", function () {
-    //         this.classList.toggle("unfold"); 
-    //         let upper = this.previousElementSibling;
-    //         if (upper != null) {
-    //             upper.classList.toggle("unfold");
-    //             console.log(upper);
-    //             let upperTwo = upper.previousElementSibling;
-    //             console.log(upperTwo);
-    //             if (upperTwo != null) {
-    //                 console.log("hello");
-    //                 upperTwo.classList.toggle("unfold");
-    //             }
-    //         }
-    //     })
-    // );
-
-
-    /* Mobile burger animation */
-    let burgerButton = document.getElementById("burger-icon");
-
-    burgerButton.addEventListener("touchstart", function () {
-        this.classList.toggle("open");
-    });
 
     /* Collapse Team Tab */
 
